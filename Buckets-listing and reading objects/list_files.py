@@ -6,9 +6,9 @@ def list_blobs(request):
   bucket = client.get_bucket(BUCKET_NAME)
   blobs = bucket.list_blobs()
   
-  b = ""
+  filenames = ""
   for blob in blobs:
-    b += blob.name
-    b +="\n"
+    filenames += blob.name
+    filenames +="\n"
   
-  return f'{b}'
+  return f'{filenames}'
